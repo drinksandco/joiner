@@ -1,7 +1,7 @@
 # Joiner
 
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status](https://scrutinizer-ci.com/g/uvinum/joiner/badges/build.png?b=master)](https://scrutinizer-ci.com/g/uvinum/joiner/build-status/master)
+[![Build Status](https://travis-ci.org/uvinum/joiner.svg?branch=master)](https://travis-ci.org/uvinum/joiner)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/uvinum/joiner/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/uvinum/joiner/?branch=master)
 
 A powerful library to serialize and append/filter data from your php objects or native php types (arrays, strings, integer...)
