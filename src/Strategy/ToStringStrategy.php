@@ -2,7 +2,7 @@
 
 namespace Uvinum\Strategy;
 
-final class DefaultStrategy implements Strategy
+final class ToStringStrategy implements Strategy
 {
     /** @var Strategy | null */
     private $nextStrategy;

@@ -5,7 +5,7 @@ namespace Uvinum\Tests;
 use Uvinum\Joiner;
 use Uvinum\Manipulator\ArrayManipulator;
 use Uvinum\Serializer\ArraySerializer;
-use Uvinum\Strategy\DefaultStrategy;
+use Uvinum\Strategy\ToStringStrategy;
 use Uvinum\Tests\Serializer\FakeObject;
 use Uvinum\Tests\Serializer\FakeObjectWithArrayProperty;
 
@@ -18,7 +18,7 @@ class JoinerTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->joiner = new Joiner(new ArraySerializer(new DefaultStrategy()), new ArrayManipulator());
+        $this->joiner = new Joiner(new ArraySerializer(new ToStringStrategy()), new ArrayManipulator());
     }
 
     /** @test */

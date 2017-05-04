@@ -3,7 +3,7 @@
 namespace Uvinum\Tests\Serializer;
 
 use Uvinum\Serializer\ArraySerializer;
-use Uvinum\Strategy\DefaultStrategy;
+use Uvinum\Strategy\ToStringStrategy;
 
 class ArraySerializerTest extends \PHPUnit_Framework_TestCase
 {
@@ -87,7 +87,7 @@ class ArraySerializerTest extends \PHPUnit_Framework_TestCase
 
     private function whenSerializingTheInputData()
     {
-        $serializer   = new ArraySerializer(new DefaultStrategy());
+        $serializer   = new ArraySerializer(new ToStringStrategy());
         $this->output = $serializer->serialize($this->input);
     }
 
