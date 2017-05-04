@@ -66,6 +66,9 @@ final class ArrayManipulator implements Manipulator
 
     public function process($serializedBase)
     {
-        return $this->pipeline->process($serializedBase);
+        $result         = $this->pipeline->process($serializedBase);
+        $this->pipeline = new Pipeline();
+
+        return $result;
     }
 }

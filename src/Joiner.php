@@ -19,7 +19,7 @@ final class Joiner
     {
         $this->serializer  = $serializer;
         $this->manipulator = $manipulator;
-        $this->reset();
+        $this->base        = null;
     }
 
     public function join($arg)
@@ -47,12 +47,8 @@ final class Joiner
     public function execute()
     {
         $serializedBase = $this->serializer->serialize($this->base);
+        $this->base     = null;
 
         return $this->manipulator->process($serializedBase);
-    }
-
-    private function reset()
-    {
-        $this->base = null;
     }
 }
