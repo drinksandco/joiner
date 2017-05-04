@@ -15,7 +15,7 @@ final class JsonSerializableStrategy implements Strategy
     public function execute($object)
     {
         if ($object instanceof \JsonSerializable) {
-            return \json_decode($object->jsonSerialize(), true);
+            return \json_decode(\json_encode($object), true);
         }
 
         return $this->next($object);
