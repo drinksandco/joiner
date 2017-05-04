@@ -50,12 +50,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Uvinum\\": "src"
+            "Uvinum\\Joiner\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Uvinum\\Tests\\": "tests"
+            "Uvinum\\Joiner\\": "tests"
         }
     },
     "scripts": {

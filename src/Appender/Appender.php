@@ -1,6 +1,6 @@
 <?php
 
-namespace Uvinum\Appender;
+namespace Uvinum\Joiner\Appender;
 
 interface Appender
 {

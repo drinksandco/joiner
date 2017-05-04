@@ -1,9 +1,12 @@
 <?php
 
-namespace Uvinum\Tests\Serializer;
+namespace Uvinum\Joiner\Serializer;
 
-use Uvinum\Serializer\ArraySerializer;
-use Uvinum\Strategy\ToStringStrategy;
+use Uvinum\Joiner\FakeObject;
+use Uvinum\Joiner\FakeObjectWithArrayProperty;
+use Uvinum\Joiner\Name;
+use Uvinum\Joiner\NameWithToString;
+use Uvinum\Joiner\Strategy\ToStringStrategy;
 
 class ArraySerializerTest extends \PHPUnit_Framework_TestCase
 {

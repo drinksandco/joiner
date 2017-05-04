@@ -1,9 +1,9 @@
 <?php
 
-namespace Uvinum\Manipulator;
+namespace Uvinum\Joiner\Manipulator;
 
-use Uvinum\Appender\Appender;
-use Uvinum\Filter\Filter;
+use Uvinum\Joiner\Appender\Appender;
+use Uvinum\Joiner\Filter\Filter;
 
 interface Manipulator extends Appender, Filter
 {

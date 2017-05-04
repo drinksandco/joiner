@@ -1,6 +1,6 @@
 <?php
 
-namespace Uvinum\Tests\Serializer;
+namespace Uvinum\Joiner;
 
 final class FakeObjectWithArrayProperty
 {

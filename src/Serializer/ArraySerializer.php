@@ -1,8 +1,8 @@
 <?php
 
-namespace Uvinum\Serializer;
+namespace Uvinum\Joiner\Serializer;
 
-use Uvinum\Strategy\Strategy;
+use Uvinum\Joiner\Strategy\Strategy;
 
 final class ArraySerializer implements Serializer
 {

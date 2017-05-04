@@ -1,6 +1,6 @@
 <?php
 
-namespace Uvinum\Manipulator;
+namespace Uvinum\Joiner\Manipulator;
 
 use League\Pipeline\Pipeline;
 

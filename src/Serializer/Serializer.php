@@ -1,6 +1,6 @@
 <?php
 
-namespace Uvinum\Serializer;
+namespace Uvinum\Joiner\Serializer;
 
 interface Serializer
 {

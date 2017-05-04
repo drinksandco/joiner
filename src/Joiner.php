@@ -1,9 +1,9 @@
 <?php
 
-namespace Uvinum;
+namespace Uvinum\Joiner;
 
-use Uvinum\Manipulator\Manipulator;
-use Uvinum\Serializer\Serializer;
+use Uvinum\Joiner\Manipulator\Manipulator;
+use Uvinum\Joiner\Serializer\Serializer;
 
 final class Joiner
 {

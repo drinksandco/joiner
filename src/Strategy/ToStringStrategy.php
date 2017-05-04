@@ -1,6 +1,6 @@
 <?php
 
-namespace Uvinum\Strategy;
+namespace Uvinum\Joiner\Strategy;
 
 final class ToStringStrategy implements Strategy
 {

@@ -1,13 +1,10 @@
 <?php
 
-namespace Uvinum\Tests;
+namespace Uvinum\Joiner;
 
-use Uvinum\Joiner;
-use Uvinum\Manipulator\ArrayManipulator;
-use Uvinum\Serializer\ArraySerializer;
-use Uvinum\Strategy\ToStringStrategy;
-use Uvinum\Tests\Serializer\FakeObject;
-use Uvinum\Tests\Serializer\FakeObjectWithArrayProperty;
+use Uvinum\Joiner\Manipulator\ArrayManipulator;
+use Uvinum\Joiner\Serializer\ArraySerializer;
+use Uvinum\Joiner\Strategy\ToStringStrategy;
 
 class JoinerTest extends \PHPUnit_Framework_TestCase
 {

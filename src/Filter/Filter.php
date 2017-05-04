@@ -1,6 +1,6 @@
 <?php
 
-namespace Uvinum\Filter;
+namespace Uvinum\Joiner\Filter;
 
 interface Filter
 {
