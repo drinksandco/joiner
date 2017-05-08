@@ -4,7 +4,8 @@
 [![Build Status](https://travis-ci.org/uvinum/joiner.svg?branch=master)](https://travis-ci.org/uvinum/joiner)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/uvinum/joiner/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/uvinum/joiner/?branch=master)
 
-A powerful library to serialize and append/filter data from your php objects or native php types (arrays, strings, integer...)
+A powerful library to serialize and append/filter data from your php objects or native php types (arrays, strings, integer...).
+Ready for production use.
 
 ## Install
 
