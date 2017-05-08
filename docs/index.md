@@ -13,7 +13,7 @@ So having a second string like `$string = "Marcos";` and append it `$joiner->app
 ```
 $output = $joiner->execute(); // [0 => 1, 1 => 2, 2 => 3, "name" => "Marcos"]
 ```
-But what if we want do not want any of these results to be shown? We can filter it !
+But what if we do not want any of these results to be shown? We can filter it !
 
 `$joiner->join($array)->append("name", $string)->filter(0)` will result in
 ```
