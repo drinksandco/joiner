@@ -22,8 +22,8 @@ $output = $joiner->execute(); // [1 => 2, 2 => 3, "name" => "Marcos"]
 
 
 ## Examples
-- [Primitive Data](primitive_data.md)
-- [Object with primitive fields](object_with_primitive_data.md)
-- [Object with other objects as fields](object_with_other_objects_as_fields.md)
-- [Appending values to nested keys](appending_values_to_nested_keys.md)
-- [Filtering nested keys](filtering_nested_keys.md)
+- [Primitive Data](./primitive_data.md)
+- [Object with primitive fields](./object_with_primitive_data.md)
+- [Object with other objects as fields](./object_with_other_objects_as_fields.md)
+- [Appending values to nested keys](./appending_values_to_nested_keys.md)
+- [Filtering nested keys](./filtering_nested_keys.md)
