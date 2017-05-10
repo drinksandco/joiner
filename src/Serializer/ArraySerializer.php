@@ -30,16 +30,6 @@ final class ArraySerializer implements Serializer
         if ($this->isIterable($arg)) {
             $serializedArray = [];
             foreach ($arg as $key => $value) {
-                if ($this->isIterable($value)) {
-                    $serializedArray[$key] = \array_reduce(
-                        $value,
-                        [$this, "serializeItem"],
-                        []
-                    );
-
-                    return $serializedArray;
-                }
-
                 $serializedArray[$key] = $this->serializeItem($carry, $value);
             }
 
