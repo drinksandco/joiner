@@ -85,6 +85,6 @@ class JoinerTest extends \PHPUnit_Framework_TestCase
 
     private function thenShouldExpectAnOutputOf($array)
     {
-        $this->assertArraySubset($array, $this->output);
+        $this->assertEquals($array, $this->output);
     }
 }

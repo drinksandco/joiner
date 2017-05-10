@@ -101,28 +101,32 @@ class ArraySerializerTest extends \PHPUnit_Framework_TestCase
 
     private function thenShouldAssertASerializedObject()
     {
-        $this->assertArraySubset(['name' => 'Marcos'], $this->output);
+        $this->assertEquals(['name' => 'Marcos'], $this->output);
     }
 
     private function thenShouldAssertASerializedObjectWithArray()
     {
-        $this->assertArraySubset(['name' => 'Marcos'], $this->output);
-        $this->assertArraySubset(['foods' => ["Spaguetti", "Macaroni", "Pizza"]], $this->output);
+        $this->assertEquals([
+            'name' => 'Marcos',
+            'foods' => ["Spaguetti", "Macaroni", "Pizza"]
+        ], $this->output);
     }
 
     private function thenShouldAssertAnArrayOfSerializedObjectAndSerializedObjectWithArray()
     {
-        $this->assertArraySubset([0 => ['name' => 'Marcos']], $this->output);
-        $this->assertArraySubset([1 => ['name' => 'Dave', 'foods' => ['Pizza', 'Sushi', 'Sandwich']]], $this->output);
+        $this->assertEquals([
+            0 => ['name' => 'Marcos'],
+            1 => ['name' => 'Dave', 'foods' => ['Pizza', 'Sushi', 'Sandwich']]
+        ], $this->output);
     }
 
     private function thenShouldAssertAnArrayOfSerializedObjectWithObjectProperty()
     {
-        $this->assertArraySubset(["name" => ["name" => "Marcos"]], $this->output);
+        $this->assertEquals(["name" => ["name" => "Marcos"]], $this->output);
     }
 
     private function thenShouldAssertAnArrayOfSerializedObjectWithObjectPropertyWithToStringSet()
     {
-        $this->assertArraySubset(["name" => "Marcos"], $this->output);
+        $this->assertEquals(["name" => "Marcos"], $this->output);
     }
 }
