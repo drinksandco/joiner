@@ -28,30 +28,20 @@ final class ArraySerializer implements Serializer
     private function serializeItem($carry, $arg)
     {
         if ($this->isIterable($arg)) {
-            $serializedArray = \array_reduce(
-                \array_keys($arg),
-                function ($carry, $key) use ($arg) {
-                    if ($this->isIterable($arg[$key])) {
-                        $carry[$key] = \array_reduce(
-                            $arg[$key],
-                            [$this, "serializeItem"],
-                            []
-                        );
+            $serializedArray = [];
+            foreach ($arg as $key => $value) {
+                if ($this->isIterable($value)) {
+                    $serializedArray[$key] = \array_reduce(
+                        $value,
+                        [$this, "serializeItem"],
+                        []
+                    );
 
-                        return $carry;
-                    }
-                    if (!\is_object($arg[$key])) {
-                        $carry[$key] = $arg[$key];
+                    return $serializedArray;
+                }
 
-                        return $carry;
-                    }
-
-                    $carry[$key] = $this->serializeObject($arg[$key]);
-
-                    return $carry;
-                },
-                []
-            );
+                $serializedArray[$key] = $this->serializeItem($carry, $value);
+            }
 
             return $serializedArray;
         }
