@@ -15,22 +15,16 @@ final class ArraySerializer implements Serializer
 
     public function serialize($arg)
     {
-        $serializedArguments = \array_reduce(
-            [$arg],
-            [$this, "serializeItem"],
-            []
-        );
-
-        return $serializedArguments;
+        return $this->serializeItem($arg);
     }
 
 
-    private function serializeItem($carry, $arg)
+    private function serializeItem($arg)
     {
         if ($this->isIterable($arg)) {
             $serializedArray = [];
             foreach ($arg as $key => $value) {
-                $serializedArray[$key] = $this->serializeItem($carry, $value);
+                $serializedArray[$key] = $this->serializeItem($value);
             }
 
             return $serializedArray;
@@ -58,12 +52,7 @@ final class ArraySerializer implements Serializer
             function ($carry, $property) use ($arg) {
                 /** @var \ReflectionProperty $property */
                 $property->setAccessible(true);
-                $carry[$property->getName()] = \array_reduce(
-                    [$property->getValue($arg)],
-                    [$this, "serializeItem"],
-                    []
-                );
-
+                $carry[$property->getName()] = $this->serializeItem($property->getValue($arg));
                 return $carry;
             },
             []
