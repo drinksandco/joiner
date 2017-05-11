@@ -37,9 +37,11 @@ final class Joiner
         return $this;
     }
 
-    public function filter($key)
+    public function filter(... $key)
     {
-        $this->manipulator->filter($key);
+        array_map(function ($key_to_remove) {
+            $this->manipulator->filter($key_to_remove);
+        }, $key);
 
         return $this;
     }
