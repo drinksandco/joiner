@@ -31,12 +31,12 @@ final class ArrayManipulator implements Manipulator
         $currentKey = \current($keysDepth);
         $nextKey    = \next($keysDepth);
         if (!$nextKey) {
-            $serializedBase[\strtolower($currentKey)] = $value;
+            $serializedBase[$currentKey] = $value;
 
             return $serializedBase;
         }
 
-        return $this->setNestedValue($serializedBase[\strtolower($currentKey)], $keysDepth, $value);
+        return $this->setNestedValue($serializedBase[$currentKey], $keysDepth, $value);
     }
 
     public function filter($key)
@@ -56,12 +56,12 @@ final class ArrayManipulator implements Manipulator
         $currentKey = \current($keysDepth);
         $nextKey    = \next($keysDepth);
         if (!$nextKey) {
-            unset($serializedBase[\strtolower($currentKey)]);
+            unset($serializedBase[$currentKey]);
 
             return $serializedBase;
         }
 
-        return $this->unsetNestedValue($serializedBase[\strtolower($currentKey)], $keysDepth);
+        return $this->unsetNestedValue($serializedBase[$currentKey], $keysDepth);
     }
 
     public function process($serializedBase)
