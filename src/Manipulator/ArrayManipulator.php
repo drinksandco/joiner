@@ -30,7 +30,7 @@ final class ArrayManipulator implements Manipulator
     {
         $currentKey = \current($keysDepth);
         $nextKey    = \next($keysDepth);
-        if (!$nextKey) {
+        if (false === $nextKey) {
             $serializedBase[$currentKey] = $value;
 
             return $serializedBase;
