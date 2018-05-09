@@ -57,7 +57,20 @@ final class ArraySerializer implements Serializer
             },
             []
         );
-
+        $parentClass = $reflectionClass->getParentClass();
+        if ($parentClass) {
+            $serializedParentObject = \array_reduce(
+                $parentClass->getProperties(),
+                function ($carry, $property) use ($arg) {
+                    /** @var \ReflectionProperty $property */
+                    $property->setAccessible(true);
+                    $carry[$property->getName()] = $this->serializeItem($property->getValue($arg));
+                    return $carry;
+                },
+                []
+            );
+            $serializedObject = \array_merge($serializedObject, $serializedParentObject);
+        }
         return $serializedObject;
     }
 

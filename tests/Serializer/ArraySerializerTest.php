@@ -2,6 +2,7 @@
 
 namespace Uvinum\Joiner\Serializer;
 
+use Uvinum\Joiner\ChildObject;
 use Uvinum\Joiner\FakeObject;
 use Uvinum\Joiner\FakeObjectWithArrayProperty;
 use Uvinum\Joiner\Name;
@@ -68,6 +69,14 @@ class ArraySerializerTest extends \PHPUnit_Framework_TestCase
         $this->thenShouldAssertAnArrayOfSerializedObjectWithObjectPropertyWithToStringSet();
     }
 
+    /** @test */
+    public function shouldRetrieveAllSerializePropertiesFromBothParentAndChild()
+    {
+        $this->givenAChildObject();
+        $this->whenSerializingTheInputData();
+        $this->thenShouldAssertASerializedObjectWithBothChildAndParentProperties();
+    }
+
     private function givenAnArrayWithPlainData()
     {
         $this->input = [1, 2, 3];
@@ -86,6 +95,11 @@ class ArraySerializerTest extends \PHPUnit_Framework_TestCase
     private function givenAnArrayOfObjectAndAnObjectWithArrayProperties()
     {
         $this->input = [new FakeObject("Marcos"), new FakeObjectWithArrayProperty("Dave", ["Pizza", "Sushi", "Sandwich"])];
+    }
+
+    private function givenAChildObject()
+    {
+        $this->input = new ChildObject('12345', 'Marcos');
     }
 
     private function whenSerializingTheInputData()
@@ -128,5 +142,10 @@ class ArraySerializerTest extends \PHPUnit_Framework_TestCase
     private function thenShouldAssertAnArrayOfSerializedObjectWithObjectPropertyWithToStringSet()
     {
         $this->assertEquals(["name" => "Marcos"], $this->output);
+    }
+
+    private function thenShouldAssertASerializedObjectWithBothChildAndParentProperties()
+    {
+        $this->assertEquals(['id' => '12345', 'name' => 'Marcos'], $this->output);
     }
 }
